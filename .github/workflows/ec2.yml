@@ -14,7 +14,7 @@ on:
 
 jobs:
   deploy:
-    environment: Production
+    environment: Development
     name: Deploy to EC2
     runs-on: ubuntu-latest
 
