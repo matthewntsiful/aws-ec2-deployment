@@ -1,24 +1,21 @@
 # 🚀 EC2-Deployment Project
 
-<div align="center">
-  <img src="assets/img/logo.png" alt="Project Logo" width="200"/>
-  <br>
-  <h3>Automated Web Application Deployment to AWS EC2</h3>
-  
-  ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/username/ec2-deploy/ec2.yml?style=flat-square)
-  ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
-  ![GitHub last commit](https://img.shields.io/github/last-commit/username/ec2-deploy?style=flat-square)
-  
-  <h4>Built With</h4>
-  <p>
-    <img src="https://img.shields.io/badge/AWS_EC2-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS EC2"/>
-    <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions"/>
-    <img src="https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white" alt="Apache"/>
-    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
-    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
-    <img src="https://img.shields.io/badge/SSH-4D4D4D?style=for-the-badge&logo=windows-terminal&logoColor=white" alt="SSH"/>
-  </p>
-</div>
+![Project Logo](assets/img/logo.png)
+
+## Automated Web Application Deployment to AWS EC2
+
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/matthewntsiful/ec2-deployment/ec2.yml?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/matthewntsiful/ec2-deployment?style=flat-square)
+
+## Built With
+
+![AWS EC2](https://img.shields.io/badge/AWS_EC2-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![Apache](https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![SSH](https://img.shields.io/badge/SSH-4D4D4D?style=for-the-badge&logo=windows-terminal&logoColor=white)
 
 ## 📋 Table of Contents
 
@@ -46,7 +43,7 @@ This project demonstrates an automated deployment pipeline that deploys a simple
 
 ## 📁 Project Structure
 
-```
+```markdown
 ec2-deploy/
 ├── .github/
 │   └── workflows/
@@ -85,10 +82,11 @@ ec2-deploy/
 1. Launch an EC2 instance with Ubuntu
 2. Configure security group to allow HTTP (port 80) and SSH (port 22)
 3. Connect to your instance and ensure it's updated:
-   ```bash
-   sudo apt-get update
-   sudo apt-get upgrade
-   ```
+
+```bash
+sudo apt-get update
+sudo apt-get upgrade
+```
 
 ### 2. Repository Setup
 
@@ -141,18 +139,21 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 The EC2-Deploy project roadmap includes several exciting enhancements:
 
 ### Short-term Goals
+
 - **Security Scanning Integration**: Implement SonarQube and Snyk scans for code quality and vulnerability detection
 - **Multi-environment Support**: Extend deployment to development, staging, and production environments
 - **Monitoring Integration**: Add CloudWatch metrics and alerts for application health monitoring
 - **HTTPS Implementation**: Configure SSL/TLS certificates for secure connections
 
 ### Mid-term Goals
+
 - **Container Integration**: Migrate to Docker containers for consistent deployment
 - **CI/CD Pipeline Expansion**: Add automated testing and quality gates
 - **Security Automation**: Implement automated security checks with Snyk for dependency scanning and SonarQube for code quality analysis
 - **Blue/Green Deployment**: Implement zero-downtime deployment strategy
 
 ### Long-term Vision
+
 - **Infrastructure as Code**: Complete AWS infrastructure management using Terraform or CloudFormation
 - **Microservices Architecture**: Break down the application into scalable microservices
 - **Auto-scaling Configuration**: Implement dynamic scaling based on traffic patterns
@@ -161,17 +162,17 @@ The EC2-Deploy project roadmap includes several exciting enhancements:
 
 ---
 
-<div align="center">
-  <h4>Technologies Used</h4>
-  <p>
-    <img src="https://img.shields.io/badge/AWS_EC2-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS EC2"/>
-    <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions"/>
-    <img src="https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white" alt="Apache"/>
-    <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu"/>
-    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
-    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
-    <img src="https://img.shields.io/badge/SSH-4D4D4D?style=for-the-badge&logo=windows-terminal&logoColor=white" alt="SSH"/>
-  </p>
-  <p>Powered by BlakkBrother Inc.</p>
-  <p>© 2023 BlakkBrother Inc.</p>
-</div>
+## Technologies Used
+
+![AWS EC2](https://img.shields.io/badge/AWS_EC2-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![Apache](https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![SSH](https://img.shields.io/badge/SSH-4D4D4D?style=for-the-badge&logo=windows-terminal&logoColor=white)
+
+Powered by BlakkBrother Inc.
+
+© 2023 BlakkBrother Inc.
+All rights reserved.
