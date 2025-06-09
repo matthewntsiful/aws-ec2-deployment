@@ -8,6 +8,16 @@
   ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/username/ec2-deploy/ec2.yml?style=flat-square)
   ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
   ![GitHub last commit](https://img.shields.io/github/last-commit/username/ec2-deploy?style=flat-square)
+  
+  <h4>Built With</h4>
+  <p>
+    <img src="https://img.shields.io/badge/AWS_EC2-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS EC2"/>
+    <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions"/>
+    <img src="https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white" alt="Apache"/>
+    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
+    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
+    <img src="https://img.shields.io/badge/SSH-4D4D4D?style=for-the-badge&logo=windows-terminal&logoColor=white" alt="SSH"/>
+  </p>
 </div>
 
 ## 📋 Table of Contents
@@ -126,9 +136,38 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+## 🔮 Future Enhancements
+
+The EC2-Deploy project roadmap includes several exciting enhancements:
+
+### Short-term Goals
+- **Multi-environment Support**: Extend deployment to development, staging, and production environments
+- **Monitoring Integration**: Add CloudWatch metrics and alerts for application health monitoring
+- **HTTPS Implementation**: Configure SSL/TLS certificates for secure connections
+
+### Mid-term Goals
+- **Container Integration**: Migrate to Docker containers for consistent deployment
+- **CI/CD Pipeline Expansion**: Add automated testing and quality gates
+- **Blue/Green Deployment**: Implement zero-downtime deployment strategy
+
+### Long-term Vision
+- **Infrastructure as Code**: Complete AWS infrastructure management using Terraform or CloudFormation
+- **Microservices Architecture**: Break down the application into scalable microservices
+- **Auto-scaling Configuration**: Implement dynamic scaling based on traffic patterns
+
 ---
 
 <div align="center">
-  <p>Made with ❤️ by Your Name</p>
-  <p>© 2023 Your Organization</p>
+  <h4>Technologies Used</h4>
+  <p>
+    <img src="https://img.shields.io/badge/AWS_EC2-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS EC2"/>
+    <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions"/>
+    <img src="https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white" alt="Apache"/>
+    <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu"/>
+    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
+    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
+    <img src="https://img.shields.io/badge/SSH-4D4D4D?style=for-the-badge&logo=windows-terminal&logoColor=white" alt="SSH"/>
+  </p>
+  <p>Powered by BlakkBrother Inc.</p>
+  <p>© 2023 BlakkBrother Inc.</p>
 </div>
