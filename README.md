@@ -1,4 +1,4 @@
-# 🚀 EC2-Deploy Project
+# 🚀 EC2-Deployment Project
 
 <div align="center">
   <img src="assets/img/logo.png" alt="Project Logo" width="200"/>
