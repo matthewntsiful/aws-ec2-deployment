@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    environment: dev #test #prod
+    environment: prod
     name: Deploy to EC2
     runs-on: ubuntu-latest
 
