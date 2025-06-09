@@ -141,6 +141,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 The EC2-Deploy project roadmap includes several exciting enhancements:
 
 ### Short-term Goals
+- **Security Scanning Integration**: Implement SonarQube and Snyk scans for code quality and vulnerability detection
 - **Multi-environment Support**: Extend deployment to development, staging, and production environments
 - **Monitoring Integration**: Add CloudWatch metrics and alerts for application health monitoring
 - **HTTPS Implementation**: Configure SSL/TLS certificates for secure connections
@@ -148,12 +149,15 @@ The EC2-Deploy project roadmap includes several exciting enhancements:
 ### Mid-term Goals
 - **Container Integration**: Migrate to Docker containers for consistent deployment
 - **CI/CD Pipeline Expansion**: Add automated testing and quality gates
+- **Security Automation**: Implement automated security checks with Snyk for dependency scanning and SonarQube for code quality analysis
 - **Blue/Green Deployment**: Implement zero-downtime deployment strategy
 
 ### Long-term Vision
 - **Infrastructure as Code**: Complete AWS infrastructure management using Terraform or CloudFormation
 - **Microservices Architecture**: Break down the application into scalable microservices
 - **Auto-scaling Configuration**: Implement dynamic scaling based on traffic patterns
+- **Security-as-Code**: Fully integrate security scanning into the development lifecycle with SonarQube for static code analysis and Snyk for continuous vulnerability monitoring
+- **Compliance Automation**: Implement automated compliance checks and reporting for regulatory requirements
 
 ---
 
