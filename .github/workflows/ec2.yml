@@ -5,9 +5,16 @@ on:
     branches:
       - main
 
+    paths-ignore:
+   
+      - README.md
+      - LICENSE
+      - .gitignore
+    
+
 jobs:
   deploy:
-    environment: prod
+    environment: prod #Dev #Test
     name: Deploy to EC2
     runs-on: ubuntu-latest
 
