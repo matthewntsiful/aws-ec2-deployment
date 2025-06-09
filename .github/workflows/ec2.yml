@@ -51,3 +51,5 @@ jobs:
            
             # Move new files to /var/www/html
             sudo mv * /var/www/html
+
+            #### Restart Apache to apply changes
