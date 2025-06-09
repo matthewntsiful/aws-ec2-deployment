@@ -32,11 +32,13 @@
 
 ## 🔍 Overview
 
-This project demonstrates an automated deployment pipeline that deploys a simple web application to an AWS EC2 instance using GitHub Actions. When code is pushed to the main branch, the workflow automatically deploys the updated application to the configured EC2 server.
+This project demonstrates an automated deployment pipeline that deploys a simple web application to AWS EC2 instances using GitHub Actions. The workflow supports three separate environments (Development, Testing, and Production), each with its own configuration and secrets. When code is pushed to the main branch, the workflow automatically deploys the updated application to the appropriate environment, while ignoring README.md changes to prevent unnecessary deployments.
 
 ## ✨ Features
 
+- **Multi-Environment Deployment**: Separate deployment pipelines for Development, Testing, and Production environments
 - **Continuous Deployment**: Automatic deployment to EC2 on push to main branch
+- **Selective Deployment Triggers**: Path-ignore configuration to prevent unnecessary deployments (e.g., README updates)
 - **Secure Credential Management**: Using GitHub Secrets for secure credential storage
 - **Apache Web Server**: Automatic installation and configuration of Apache
 - **Minimal Web Application**: Simple responsive web design with custom styling
@@ -47,32 +49,32 @@ This project demonstrates an automated deployment pipeline that deploys a simple
 ec2-deploy/
 ├── .github/
 │   └── workflows/
-│       └── ec2.yml        # GitHub Actions workflow file
+│       └── ec2.yml        # GitHub Actions workflow file with multi-environment support
 ├── assets/
 │   └── img/
 │       ├── background.jpg # Background image for the web app
 │       └── logo.png       # Logo image
 ├── index.html             # Main HTML file
 ├── style.css              # CSS styling
-└── README.md              # Project documentation
+└── README.md              # Project documentation (excluded from deployment triggers)
 ```
 
 ## 🔄 Deployment Workflow
 
-1. Code is pushed to the main branch
-2. GitHub Actions workflow is triggered
+1. Code is pushed to the main branch (README.md changes are ignored via path-ignore)
+2. GitHub Actions workflow is triggered for the appropriate environment (Development, Testing, or Production)
 3. Code is checked out
-4. Files are deployed to EC2 via SSH
+4. Files are deployed to the corresponding EC2 instance via SSH
 5. Remote commands install/configure Apache
 6. Web application is moved to the appropriate directory
-7. Application is accessible via the EC2 public DNS/IP
+7. Application is accessible via the environment-specific EC2 public DNS/IP
 
 ## 📋 Prerequisites
 
-- AWS account with an EC2 instance
-- SSH key pair for EC2 instance
-- GitHub repository
-- Basic knowledge of GitHub Actions
+- AWS account with multiple EC2 instances (for Development, Testing, and Production)
+- SSH key pairs for each EC2 instance
+- GitHub repository with environments configured
+- Basic knowledge of GitHub Actions and environment secrets
 - Understanding of web development fundamentals
 
 ## 🛠 Setup Instructions
@@ -97,7 +99,7 @@ sudo apt-get upgrade
 
 ## 🔐 GitHub Secrets Configuration
 
-Configure the following secrets in your GitHub repository:
+Configure the following secrets in your GitHub repository environments (Development, Testing, Production):
 
 | Secret Name | Description |
 |-------------|-------------|
@@ -105,6 +107,8 @@ Configure the following secrets in your GitHub repository:
 | `HOST_DNS` | Public DNS or IP of your EC2 instance |
 | `EC2_USER` | Username for SSH connection (e.g., ubuntu, ec2-user) |
 | `TARGET_DIR` | Target directory on EC2 (e.g., /home/ubuntu) |
+
+Each environment (Development, Testing, Production) has its own set of these secrets, allowing for deployment to different servers.
 
 ## 🎨 Customization
 
@@ -116,9 +120,12 @@ Configure the following secrets in your GitHub repository:
 
 ### Workflow
 
+- The workflow is configured with path-ignore to prevent README.md updates from triggering deployments
+- Three separate environments are configured: Development, Testing, and Production
+- Each environment uses its own set of secrets for deployment
 - Edit `.github/workflows/ec2.yml` to add additional deployment steps
 - Customize the Apache configuration as needed
-- Add environment-specific configurations
+- Modify environment-specific configurations as required
 
 ## 👥 Contributing
 
@@ -141,7 +148,7 @@ The EC2-Deploy project roadmap includes several exciting enhancements:
 ### Short-term Goals
 
 - **Security Scanning Integration**: Implement SonarQube and Snyk scans for code quality and vulnerability detection
-- **Multi-environment Support**: Extend deployment to development, staging, and production environments
+- ✅ **Multi-environment Support**: Extend deployment to development, testing, and production environments (Completed)
 - **Monitoring Integration**: Add CloudWatch metrics and alerts for application health monitoring
 - **HTTPS Implementation**: Configure SSL/TLS certificates for secure connections
 
