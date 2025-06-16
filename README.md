@@ -1,21 +1,23 @@
-# 🚀 EC2-Deployment Project
+# 🚀 Node.js EC2 Deployment with CI/CD
 
-![Project Logo](assets/img/logo.png)
+![Project Logo](app/public/assets/img/logo.png)
 
-## Automated Web Application Deployment to AWS EC2
+## Automated Node.js Application Deployment to AWS EC2 with GitHub Actions
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/matthewntsiful/ec2-deployment/ec2.yml?style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/matthewntsiful/ec2-deployment/ec2.yml?style=flat-square&label=CI%2FCD%20Pipeline)
+![Node.js Version](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/matthewntsiful/ec2-deployment?style=flat-square)
 
 ## Built With
 
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 ![AWS EC2](https://img.shields.io/badge/AWS_EC2-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-![Apache](https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![SSH](https://img.shields.io/badge/SSH-4D4D4D?style=for-the-badge&logo=windows-terminal&logoColor=white)
 
 ## 📋 Table of Contents
 
@@ -32,42 +34,60 @@
 
 ## 🔍 Overview
 
-This project demonstrates an automated deployment pipeline that deploys a simple web application to AWS EC2 instances using GitHub Actions. The workflow supports three separate environments (Development, Testing, and Production), each with its own configuration and secrets. When code is pushed to the main branch, the workflow automatically deploys the updated application to the appropriate environment, while ignoring README.md changes to prevent unnecessary deployments.
+This project demonstrates a complete CI/CD pipeline for deploying a Node.js application to AWS EC2 instances using GitHub Actions. The workflow includes automated security scanning, testing, and deployment to production environments. The pipeline is triggered on every push to the main branch (excluding documentation changes) and ensures code quality and security before deployment.
+
+The CI/CD pipeline includes:
+- Automated security scanning with `npm audit`
+- Artifact management for security reports
+- Automated deployment to EC2 instances
+- Nginx web server configuration
+- Environment-specific deployments
 
 ## ✨ Features
 
-- **Multi-Environment Deployment**: Separate deployment pipelines for Development, Testing, and Production environments
-- **Continuous Deployment**: Automatic deployment to EC2 on push to main branch
-- **Selective Deployment Triggers**: Path-ignore configuration to prevent unnecessary deployments (e.g., README updates)
-- **Secure Credential Management**: Using GitHub Secrets for secure credential storage
-- **Apache Web Server**: Automatic installation and configuration of Apache
-- **Minimal Web Application**: Simple responsive web design with custom styling
+- **Automated CI/CD Pipeline**: End-to-end automation from code push to deployment
+- **Security Scanning**: Integrated npm audit for dependency vulnerability checks
+- **Artifact Management**: Stores and tracks security reports
+- **Selective Deployment**: Path-ignore configuration to prevent unnecessary deployments
+- **Secure Credentials**: GitHub Secrets for sensitive information
+- **Nginx Web Server**: High-performance web server configuration
+- **Node.js Application**: Modern JavaScript runtime with Express.js
+- **Automated Testing**: (Add your testing framework badges here when implemented)
 
 ## 📁 Project Structure
 
 ```markdown
-ec2-deploy/
+ec2-deployment/
 ├── .github/
 │   └── workflows/
-│       └── ec2.yml        # GitHub Actions workflow file with multi-environment support
-├── assets/
-│   └── img/
-│       ├── background.jpg # Background image for the web app
-│       └── logo.png       # Logo image
-├── index.html             # Main HTML file
-├── style.css              # CSS styling
-└── README.md              # Project documentation (excluded from deployment triggers)
+│       └── ec2.yml          # GitHub Actions CI/CD workflow
+├── app/
+│   ├── public/             # Static files (HTML, CSS, images)
+│   │   ├── assets/
+│   │   │   └── img/      # Image assets
+│   │   ├── index.html      # Main HTML file
+│   │   └── style.css       # CSS styling
+│   ├── server.js           # Node.js/Express server
+│   └── package.json        # Dependencies and scripts
+└── README.md               # Project documentation
 ```
 
-## 🔄 Deployment Workflow
+## 🔄 CI/CD Pipeline Workflow
 
-1. Code is pushed to the main branch (README.md changes are ignored via path-ignore)
-2. GitHub Actions workflow is triggered for the appropriate environment (Development, Testing, or Production)
-3. Code is checked out
-4. Files are deployed to the corresponding EC2 instance via SSH
-5. Remote commands install/configure Apache
-6. Web application is moved to the appropriate directory
-7. Application is accessible via the environment-specific EC2 public DNS/IP
+1. **Code Push**: Code is pushed to the main branch
+   - Documentation changes are ignored via path-ignore
+   - Security scanning is performed using `npm audit`
+   - Security reports are generated and stored as artifacts
+
+2. **Deployment**:
+   - Code is deployed to the EC2 instance via SSH
+   - Node.js and Nginx are automatically installed and configured
+   - Application dependencies are installed
+   - The application is served via Nginx reverse proxy
+
+3. **Verification**:
+   - Application is accessible via the EC2 instance's public IP/DNS
+   - (Add your testing steps here when implemented)
 
 ## 📋 Prerequisites
 
@@ -92,10 +112,15 @@ sudo apt-get upgrade
 
 ### 2. Repository Setup
 
-1. Fork or clone this repository
-2. Update the web application files as needed
+1. Clone this repository
+2. Install dependencies:
+   ```bash
+   cd app
+   npm install
+   ```
 3. Configure GitHub Secrets (see below)
-4. Push changes to the main branch to trigger deployment
+4. Push changes to the main branch to trigger the CI/CD pipeline
+5. Access your application at `http://your-ec2-ip:3000`
 
 ## 🔐 GitHub Secrets Configuration
 
@@ -114,18 +139,23 @@ Each environment (Development, Testing, Production) has its own set of these sec
 
 ### Web Application
 
+- Update the static files in `app/public/`
 - Replace `background.jpg` and `logo.png` with your own images
 - Modify `index.html` to include your content
 - Update `style.css` to match your branding
 
-### Workflow
+### Node.js Application
 
-- The workflow is configured with path-ignore to prevent README.md updates from triggering deployments
-- Three separate environments are configured: Development, Testing, and Production
-- Each environment uses its own set of secrets for deployment
-- Edit `.github/workflows/ec2.yml` to add additional deployment steps
-- Customize the Apache configuration as needed
-- Modify environment-specific configurations as required
+- The main application logic is in `app/server.js`
+- Add your API routes and business logic here
+- Install additional npm packages as needed
+
+### CI/CD Pipeline
+
+- The workflow is configured in `.github/workflows/ec2.yml`
+- Add testing steps to the workflow when implementing tests
+- Customize the deployment process as needed
+- Configure environment-specific settings in GitHub repository secrets
 
 ## 👥 Contributing
 
@@ -171,13 +201,14 @@ The EC2-Deploy project roadmap includes several exciting enhancements:
 
 ## Technologies Used
 
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 ![AWS EC2](https://img.shields.io/badge/AWS_EC2-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-![Apache](https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![SSH](https://img.shields.io/badge/SSH-4D4D4D?style=for-the-badge&logo=windows-terminal&logoColor=white)
 
 Powered by BlakkBrother Inc.
 
