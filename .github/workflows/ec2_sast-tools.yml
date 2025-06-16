@@ -8,7 +8,7 @@ on:
       - 'node_modules/**'
       - 'readme.md'
       - '.gitignore' 
-      - '.github/workflows/**'
+     # - '.github/workflows/**'
   workflow_dispatch: # Allows manual execution
 
 jobs:
